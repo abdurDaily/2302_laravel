@@ -10,4 +10,7 @@ class DashbaordController extends Controller
     function dashboard() {
         return view('backend.dashboard');
     }
+
+
+   
 }

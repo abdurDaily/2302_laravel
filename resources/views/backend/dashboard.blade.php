@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="{{ asset('backend/assets/css/materialdesignicons.min.css') }}" />
   <link rel="stylesheet" href="{{ asset('backend/assets/css/fullcalendar.css') }}" />
   <link rel="stylesheet" href="{{ asset('backend/assets/css/main.css') }}" />
+  @stack('css')
 </head>
 
 <body>
@@ -66,10 +67,10 @@
           </a>
           <ul id="ddmenu_2" class="collapse show dropdown-nav">
             <li>
-              <a href="settings.html"> Settings </a>
+              <a href="{{ route('category') }}">Category </a>
             </li>
             <li>
-              <a href="blank-page.html" class="active"> Blank Page </a>
+              <a href="{{ route('subcategory') }}" class="active">Sub Category </a>
             </li>
           </ul>
         </li>
@@ -440,12 +441,12 @@
         <div class="title-wrapper pt-30">
           <div class="row align-items-center">
             <div class="col-md-6">
-              <div class="title">
+              {{-- <div class="title">
                 <h2>Title</h2>
-              </div>
+              </div> --}}
             </div>
             <!-- end col -->
-            <div class="col-md-6">
+            {{-- <div class="col-md-6">
               <div class="breadcrumb-wrapper">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
@@ -458,7 +459,7 @@
                   </ol>
                 </nav>
               </div>
-            </div>
+            </div> --}}
             <!-- end col -->
           </div>
           <!-- end row -->
@@ -467,6 +468,9 @@
       </div>
       <!-- end container -->
     </section>
+
+
+    @yield('contents')
     <!-- ========== section end ========== -->
 
     <!-- ========== footer start =========== -->
@@ -500,6 +504,7 @@
   <!-- ======== main-wrapper end =========== -->
 
   <!-- ========= All Javascript files linkup ======== -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="{{ asset('backend/assets/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('backend/assets/js/Chart.min.js') }}"></script>
   <script src="{{ asset('backend/assets/js/dynamic-pie-chart.js') }}"></script>
@@ -509,6 +514,7 @@
   <script src="{{ asset('backend/assets/js/world-merc.js') }}"></script>
   <script src="{{ asset('backend/assets/js/polyfill.js') }}"></script>
   <script src="{{ asset('backend/assets/js/main.js') }}"></script>
+  @stack('js')
 </body>
 
 </html>
